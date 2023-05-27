@@ -1,0 +1,62 @@
+create database electriciti;
+use electriciti;
+
+create table login(
+meter_no varchar(10) not null,
+username varchar(10) not null,
+name varchar(30) not null,
+password varchar(30) not null,
+user varchar(30) not null);
+
+select * from login;
+
+
+
+create table customer(
+name varchar(30) not null,
+meter varchar(10) not null,
+address varchar(50) not null,
+city varchar(30) not null,
+state varchar(30) not null,
+email varchar(30) not null,
+phone varchar(30) not null);
+
+select * from customer;
+
+
+
+create table meter_info(
+meter_number varchar(20) not null,
+meter_location varchar(10) not null,
+meter_type varchar(20) not null,
+phase_code varchar(10) not null,
+bill_type varchar(10) not null,
+days varchar(10) not null);
+
+select * from meter_info;
+
+
+
+
+create table tax(
+cost_per_unit varchar(10) not null,
+meter_rent varchar(10) not null,
+service_charge varchar(10) not null,
+service_tax varchar(10) not null,
+swacch_bharat_cess varchar(10) not null,
+fixed_tax varchar(10) not null);
+
+insert into tax values('3','10','0','10','5','30');
+
+select * from tax;
+
+create table bill(
+meter varchar(10) not null,
+month varchar(10) not null,
+units varchar(10) not null,
+total_bill varchar(20) not null,
+status varchar(10) not null);
+
+select * from bill;
+
+select * from bill where meter = "636740" and month='May';
